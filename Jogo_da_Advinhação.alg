@@ -6,7 +6,8 @@ var
     
 
 inicio
-   secreto := 4
+
+   secreto := 7
    escreval("-------------------------------")
    escreval("***** Jogo da Advinhação *****")
    escreva("-------------------------------")
@@ -14,14 +15,14 @@ inicio
    escreval
    
    //laço para repetir até ele acertar o númeor secreto
+   escreval
+   repita
    escreva("Digite uma número e tente acertar o NÚMERO SECRETO! ")
    escreval
    escreva("Informe o número: ")
    leia(num)
-   escreval(" ")
-
-    
-se (num = secreto) entao
+   escreval
+   se (num = secreto) entao
   escreva("Parábens, você acertou o NÚMERO SECRETO!")
   escreval
 fimse
@@ -35,12 +36,5 @@ se (num > secreto) entao
   escreva("Seu chute é maior do que o NÚMERO SECRETO!")
   escreval
 fimse
-
-se (num != secreto) faca
-  escreva("Informe o número: ")
-  leia(num)
-fimenquanto
-   
-
-
+ate (num = secreto)
 fimalgoritmo
