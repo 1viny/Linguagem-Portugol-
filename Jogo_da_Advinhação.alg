@@ -21,6 +21,7 @@ inicio
    escreval
    escreva("Informe o número: ")
    leia(num)
+   escreva("---------------------------------------------------")
    escreval
    se (num = secreto) entao
   escreva("Parábens, você acertou o NÚMERO SECRETO!")
