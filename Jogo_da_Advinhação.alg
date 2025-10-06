@@ -2,11 +2,13 @@ algoritmo "Vinicyus Faria."
 //Jogo da advinhação
 
 var
-    num, x, secreto: inteiro
+    num, x, secreto, cont: inteiro
+    pontos: real
     texto: caractere
 inicio
 
    secreto := 7
+   pontos := 1000
    escreval("-------------------------------")
    escreval("***** Jogo da Advinhação *****")
    escreva("-------------------------------")
@@ -19,7 +21,7 @@ inicio
    leia(num)
    escreva("---------------------------------------------------")
    escreval
-   
+   cont := cont +1
 se (num > secreto) entao
   escreva(num, " é maior do que o NÚMERO SECRETO!")
   escreval
@@ -30,19 +32,28 @@ se (num < secreto) entao
   escreval
 fimse
 
-se (num = secreto) entao
-  escreva("Parábens, o ", secreto, " é o NÚMERO SECRETO!")
-  escreval
-fimse
-
 se (num = secreto -1) ou (num = secreto -2) ou (num = secreto -3)entao
-  escreva("Você quase acertou, esse é o caminho...")
+  escreva("Esse é o caminho, você quase acertou...")
   escreval
 fimse
 
 se (num = secreto +1) ou (num = secreto +2) ou (num = secreto +3)entao
-  escreva("Você quase acertou, esse é o caminho...")
+  escreva("Esse é o caminho, você quase acertou...")
   escreval
 fimse
-ate (num = secreto)
+
+se (num <> secreto) entao
+  pontos := pontos - (num/2)
+fimse
+ate (num = secreto) //fim do laço
+
+se (num = secreto) entao
+  escreva("Parábens, o ", secreto, " é o NÚMERO SECRETO!")
+  escreval
+fimse     //menssagem de parabens
+escreva("Você acertou na", cont, "° tentativa") // mostra o número de tentativas
+escreval
+escreval("Sua pontuação é de: ", pontos:1:2)  // número de pontuação
+escreva("---------------------------------------------------")
+escreval
 fimalgoritmo
